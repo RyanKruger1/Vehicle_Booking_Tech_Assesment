@@ -4,7 +4,10 @@ Imports System.Data.SqlClient
 
 Public Class Class1
 
+    'Change this string according to Your database settings.
+
     Public SQLCon As New SqlConnection With {.ConnectionString = "Data Source=DESKTOP-J92NKJD;Initial Catalog=PracticeDB;Integrated Security=True"}
+
     Public SQLCmd As SqlCommand
 
 

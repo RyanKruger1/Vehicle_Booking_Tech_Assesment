@@ -38,15 +38,16 @@ Partial Class EditForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(117, 22)
+        Me.Label4.Font = New System.Drawing.Font("Sitka Small", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(60, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(149, 13)
+        Me.Label4.Size = New System.Drawing.Size(303, 28)
         Me.Label4.TabIndex = 27
         Me.Label4.Text = "Please specify booking details"
         '
         'dtp
         '
-        Me.dtp.Location = New System.Drawing.Point(233, 122)
+        Me.dtp.Location = New System.Drawing.Point(233, 111)
         Me.dtp.MaxDate = New Date(2020, 12, 11, 0, 0, 0, 0)
         Me.dtp.MinDate = New Date(2020, 1, 13, 0, 0, 0, 0)
         Me.dtp.Name = "dtp"
@@ -66,7 +67,7 @@ Partial Class EditForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 125)
+        Me.Label3.Location = New System.Drawing.Point(20, 114)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(30, 13)
         Me.Label3.TabIndex = 24
@@ -75,7 +76,7 @@ Partial Class EditForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(20, 98)
+        Me.Label2.Location = New System.Drawing.Point(20, 87)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 13)
         Me.Label2.TabIndex = 23
@@ -84,7 +85,7 @@ Partial Class EditForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(20, 71)
+        Me.Label1.Location = New System.Drawing.Point(20, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 13)
         Me.Label1.TabIndex = 22
@@ -92,21 +93,21 @@ Partial Class EditForm
         '
         'model
         '
-        Me.model.Location = New System.Drawing.Point(233, 91)
+        Me.model.Location = New System.Drawing.Point(233, 80)
         Me.model.Name = "model"
         Me.model.Size = New System.Drawing.Size(100, 20)
         Me.model.TabIndex = 21
         '
         'Name
         '
-        Me.Name.Location = New System.Drawing.Point(233, 64)
+        Me.Name.Location = New System.Drawing.Point(233, 53)
         Me.Name.Name = "Name"
         Me.Name.Size = New System.Drawing.Size(100, 20)
         Me.Name.TabIndex = 20
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(217, 206)
+        Me.Button2.Location = New System.Drawing.Point(248, 206)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(157, 56)
         Me.Button2.TabIndex = 28
@@ -117,7 +118,7 @@ Partial Class EditForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(20, 154)
+        Me.Label5.Location = New System.Drawing.Point(20, 143)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(35, 13)
         Me.Label5.TabIndex = 29
@@ -125,15 +126,16 @@ Partial Class EditForm
         '
         'notes
         '
-        Me.notes.Location = New System.Drawing.Point(233, 154)
+        Me.notes.Location = New System.Drawing.Point(233, 143)
         Me.notes.Name = "notes"
         Me.notes.Size = New System.Drawing.Size(100, 20)
         Me.notes.TabIndex = 30
         '
-        'Form3
+        'EditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(448, 294)
         Me.Controls.Add(Me.notes)
         Me.Controls.Add(Me.Label5)
@@ -146,7 +148,7 @@ Partial Class EditForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.model)
         Me.Controls.Add(Me.Name)
-        '  Me.Name = "Form3"
+        ' Me.Name = "EditForm"
         Me.Text = "Form3"
         Me.ResumeLayout(False)
         Me.PerformLayout()

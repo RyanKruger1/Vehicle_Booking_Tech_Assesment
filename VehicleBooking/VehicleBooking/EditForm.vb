@@ -1,9 +1,8 @@
 ﻿Public Class EditForm
 
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim nameDb As String = Name.Text
-        Dim modelDb As String = model.Text
+        Dim modelDb As String = model.Text.ToUpper
         Dim day As String = dtp.Value.ToString("yyyy-MM-dd")
         Dim database As New SQLServerInterface
 
@@ -17,19 +16,18 @@
             MsgBox("Could not find booking information. Please try again")
         End If
 
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         Dim nameDb As String = Name.Text
-        Dim modelDb As String = model.Text
+        Dim modelDb As String = model.Text.ToUpper
         Dim day As String = dtp.Value.ToString("yyyy-MM-dd")
         Dim nts As String = notes.Text
 
         Dim database As New SQLServerInterface
         If database.InsertBooking(nameDb, modelDb, day, nts) Then
-            MsgBox("Successfully created booking.")
+            MsgBox("Successfully updated booking.")
             Me.Close()
         Else
             MsgBox("Oops something went wrong , please try again")

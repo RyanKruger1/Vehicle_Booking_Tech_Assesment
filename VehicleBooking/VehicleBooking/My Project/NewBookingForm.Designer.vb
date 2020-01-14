@@ -93,7 +93,7 @@ Partial Class NewBookingForm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(128, 167)
+        Me.Button1.Location = New System.Drawing.Point(132, 170)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(157, 56)
         Me.Button1.TabIndex = 8
@@ -123,6 +123,7 @@ Partial Class NewBookingForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(433, 280)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.dtp)
@@ -134,7 +135,7 @@ Partial Class NewBookingForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.model)
         Me.Controls.Add(Me.Name)
-        '     Me.Name = "NewBookingForm"
+        '  Me.Name = "NewBookingForm"
         Me.Text = "Client Name:"
         Me.ResumeLayout(False)
         Me.PerformLayout()

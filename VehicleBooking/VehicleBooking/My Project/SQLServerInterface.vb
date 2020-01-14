@@ -15,7 +15,11 @@ Public Class SQLServerInterface
 
             SQLCmd = New SqlCommand("Insert Into VehicleBookings Values ('" + name + "','" + car + "','" + dte + "','" + notes + "');", SQLCon)
 
-            SQLCmd.ExecuteNonQuery()
+            Dim changedRows As Integer = SQLCmd.ExecuteNonQuery()
+
+            If changedRows = 0 Then
+                Return False
+            End If
 
             Return True
 
@@ -112,9 +116,15 @@ Public Class SQLServerInterface
 
             SQLCon.Open()
 
-            SQLCmd = New SqlCommand("Delete from VehicleBookings Where Client ='" + name + "' And Vehicle_Model = '" + car + "' And Date_of_Booking = '" + dte + "' ", SQLCon)
+            SQLCmd = New SqlCommand("Delete from VehicleBookings Where [Client] ='" + name + "' And [Vehicle_Model] = '" + car + "' And [Date_of_Booking] = '" + dte + "' ", SQLCon)
 
-            SQLCmd.ExecuteNonQuery()
+            Dim changedRows As Integer = SQLCmd.ExecuteNonQuery()
+
+            If changedRows = 0 Then
+                Return False
+            End If
+
+
 
             Return True
 

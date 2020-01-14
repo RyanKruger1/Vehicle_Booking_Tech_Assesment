@@ -95,16 +95,18 @@ Partial Class DeleteBookingForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(147, 23)
+        Me.Label4.Font = New System.Drawing.Font("Sitka Small", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(98, 20)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(149, 13)
+        Me.Label4.Size = New System.Drawing.Size(253, 24)
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "Please specify booking details"
         '
-        'Form2
+        'DeleteBookingForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(470, 263)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.dtp)
@@ -114,7 +116,7 @@ Partial Class DeleteBookingForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.model)
         Me.Controls.Add(Me.Name)
-        ' Me.Name = "Delete Form"
+        ' Me.Name = "DeleteBookingForm"
         Me.Text = "Form2"
         Me.ResumeLayout(False)
         Me.PerformLayout()

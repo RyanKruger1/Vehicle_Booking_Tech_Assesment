@@ -4,16 +4,25 @@ Imports System.Data.SqlClient
 
 Public Class SQLServerInterface
 
-    Public SQLCon As New SqlConnection With {.ConnectionString = "Data Source=DESKTOP-J92NKJD;Initial Catalog=PracticeDB;Integrated Security=True"}
+    Public SQLCon As New SqlConnection With {.ConnectionString = "Server=localhost;Database=Ryan_DB;Trusted_Connection=True;"}
     Public SQLCmd As SqlCommand
 
 
     Public Function InsertBooking(name As String, car As String, dte As String, notes As String) As Boolean
         Try
-
+            Dim dataTable As New DataTable
+            Dim adapter As New SqlDataAdapter
             SQLCon.Open()
 
-            SQLCmd = New SqlCommand("Insert Into VehicleBookings Values ('" + name + "','" + car + "','" + dte + "','" + notes + "');", SQLCon)
+            SQLCmd = New SqlCommand("Select * FROM VehicleBookings ", SQLCon)
+
+            adapter.SelectCommand = SQLCmd
+            adapter.Fill(dataTable)
+            Dim query As String
+            Dim val As Integer = dataTable.Rows(dataTable.Rows.Count - 1)(0) + 1
+
+            query = "Insert Into VehicleBookings Values(" + val.ToString + ",'" + name + "','" + car + "','" + dte + "','" + notes + "');"
+            SQLCmd = New SqlCommand(query, SQLCon)
 
             Dim changedRows As Integer = SQLCmd.ExecuteNonQuery()
 
@@ -167,6 +176,39 @@ Public Class SQLServerInterface
 
     End Function
 
+    Public Function DeleteBookingWithID(id As String, Name As String) As Boolean
+        Dim dataTable As New DataTable
+
+        Try
+            Dim adapter As New SqlDataAdapter
+
+            SQLCon.Open()
+
+            Dim today As String = DateTime.Now.ToString("yyyy-MM-dd")
+
+            SQLCmd = New SqlCommand("Delete From VehicleBookings where id =" + id + " And Client = '" + Name + "'", SQLCon)
+
+            Dim changedRows As Integer = SQLCmd.ExecuteNonQuery()
+
+            If changedRows = 0 Then
+
+                Return False
+
+            End If
+
+            adapter.SelectCommand = SQLCmd
+            adapter.Fill(dataTable)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+            SQLCon.Close()
+
+        End Try
+        Return True
+
+    End Function
 
 End Class
 

@@ -2,6 +2,8 @@
 Imports System.Windows.Forms
 
 Public Class MainMenu
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim nbf As New NewBookingForm
         nbf.Show()

@@ -1,4 +1,7 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports System.Data
+Imports System.Windows.Forms
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainMenu
     Inherits System.Windows.Forms.Form
 
@@ -20,8 +23,10 @@ Partial Class MainMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
@@ -31,9 +36,16 @@ Partial Class MainMenu
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.GridView1 = New System.Windows.Forms.DataGridView()
+        Me.source = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VehicleModelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateofBookingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NotesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.source, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -111,11 +123,18 @@ Partial Class MainMenu
         '
         'GridView1
         '
+        Me.GridView1.AutoGenerateColumns = False
         Me.GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.GridView1.Location = New System.Drawing.Point(388, 91)
+        Me.GridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.ClientDataGridViewTextBoxColumn, Me.VehicleModelDataGridViewTextBoxColumn, Me.DateofBookingDataGridViewTextBoxColumn, Me.NotesDataGridViewTextBoxColumn})
+        Me.GridView1.DataSource = Me.source
+        Me.GridView1.Location = New System.Drawing.Point(399, 91)
         Me.GridView1.Name = "GridView1"
         Me.GridView1.Size = New System.Drawing.Size(400, 258)
         Me.GridView1.TabIndex = 9
+        '
+        'source
+        '
+        Me.source.Position = 0
         '
         'Label1
         '
@@ -137,6 +156,36 @@ Partial Class MainMenu
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Please make your selection:"
         '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        '
+        'ClientDataGridViewTextBoxColumn
+        '
+        Me.ClientDataGridViewTextBoxColumn.DataPropertyName = "Client"
+        Me.ClientDataGridViewTextBoxColumn.HeaderText = "Client"
+        Me.ClientDataGridViewTextBoxColumn.Name = "ClientDataGridViewTextBoxColumn"
+        '
+        'VehicleModelDataGridViewTextBoxColumn
+        '
+        Me.VehicleModelDataGridViewTextBoxColumn.DataPropertyName = "Vehicle_Model"
+        Me.VehicleModelDataGridViewTextBoxColumn.HeaderText = "Vehicle_Model"
+        Me.VehicleModelDataGridViewTextBoxColumn.Name = "VehicleModelDataGridViewTextBoxColumn"
+        '
+        'DateofBookingDataGridViewTextBoxColumn
+        '
+        Me.DateofBookingDataGridViewTextBoxColumn.DataPropertyName = "Date_of_Booking"
+        Me.DateofBookingDataGridViewTextBoxColumn.HeaderText = "Date_of_Booking"
+        Me.DateofBookingDataGridViewTextBoxColumn.Name = "DateofBookingDataGridViewTextBoxColumn"
+        '
+        'NotesDataGridViewTextBoxColumn
+        '
+        Me.NotesDataGridViewTextBoxColumn.DataPropertyName = "Notes"
+        Me.NotesDataGridViewTextBoxColumn.HeaderText = "Notes"
+        Me.NotesDataGridViewTextBoxColumn.Name = "NotesDataGridViewTextBoxColumn"
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -157,8 +206,13 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.Text = "Form1"
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.source, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
+
+    End Sub
+
+    Public Sub fillTable()
 
     End Sub
 
@@ -173,4 +227,10 @@ Partial Class MainMenu
     Friend WithEvents GridView1 As Windows.Forms.DataGridView
     Friend WithEvents Label1 As Windows.Forms.Label
     Friend WithEvents Label2 As Windows.Forms.Label
+    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClientDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents VehicleModelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DateofBookingDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NotesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents source As BindingSource
 End Class

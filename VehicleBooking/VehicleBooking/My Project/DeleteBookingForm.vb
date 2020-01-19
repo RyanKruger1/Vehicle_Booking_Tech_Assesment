@@ -1,18 +1,18 @@
 ﻿Public Class DeleteBookingForm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim nameDb As String = Name.Text
-        Dim modelDb As String = model.Text
-        Dim day As String = dtp.Value.ToString("yyyy-MM-dd")
-        Dim database As New SQLServerInterface
+        Dim id As String = identification.Text
 
-        If database.DeleteBooking(nameDb, modelDb, day) Then
-            MsgBox("Successfully deleted bookings")
-            Me.Close()
+        Dim nme As String = Name.Text
 
+        Dim db As New SQLServerInterface
+
+        If db.DeleteBookingWithID(id, nme) Then
+            MsgBox("Successfully deleted booking with id: " + id)
         Else
-            MsgBox("Could not find booking information. Please try again")
+            MsgBox("Could booking was not found")
         End If
+
 
 
     End Sub

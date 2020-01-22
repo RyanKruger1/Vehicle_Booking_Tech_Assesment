@@ -12,7 +12,7 @@ Public Class NewBookingForm
         Dim nts As String = notes.Text
         Dim errorCheck As Boolean = False
         Dim model As Object = listbox.SelectedItem
-        Dim modelStr As String = model.ToString
+        Dim modelStr As String = modelDb.ToString
 
 
 
@@ -36,7 +36,7 @@ Public Class NewBookingForm
         Else
 
             Dim database As New SQLServerInterface
-            If database.InsertBooking(nameDb, modelStr, day, nts) Then
+            If database.InsertBooking(nameDb, model, day, nts) Then
                 MsgBox("Successfully created booking.")
                 Me.Close()
             Else

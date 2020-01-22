@@ -3,8 +3,9 @@ Imports System.Data.Sql
 Imports System.Data.SqlClient
 
 Public Class SQLServerInterface
+    'Public SQLCon As New SqlConnection With {.ConnectionString = "Server=localhost;Database=PracticeDB;Trusted_Connection=True;"}
 
-    Public SQLCon As New SqlConnection With {.ConnectionString = "Server=localhost;Database=Ryan_DB;Trusted_Connection=True;"}
+    Public SQLCon As New SqlConnection With {.ConnectionString = "Server=tcp:ryanserver.database.windows.net,1433;Initial Catalog=Ryan_DB;Persist Security Info=False;User ID=goku;Password=Kru@2020;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"}
     Public SQLCmd As SqlCommand
 
 
@@ -18,8 +19,17 @@ Public Class SQLServerInterface
 
             adapter.SelectCommand = SQLCmd
             adapter.Fill(dataTable)
+            Dim val As Integer
+            If dataTable.Rows.Count < 1 Then
+
+                val = 1
+
+            Else
+
+
+                val = dataTable.Rows(dataTable.Rows.Count - 1)(0) + 1
+            End If
             Dim query As String
-            Dim val As Integer = dataTable.Rows(dataTable.Rows.Count - 1)(0) + 1
 
             query = "Insert Into VehicleBookings Values(" + val.ToString + ",'" + name + "','" + car + "','" + dte + "','" + notes + "');"
             SQLCmd = New SqlCommand(query, SQLCon)

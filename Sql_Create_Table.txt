@@ -1,4 +1,5 @@
 Create Table VehicleBookings(
+id integer not null Primary Key,
 Client Varchar(25),
 Vehicle_Model Varchar(25),
 Date_of_Booking DateTime,
